@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+dependencies {
+    implementation 'com.google.guava:guava:28.1-jre'
+    implementation 'javax.ws.rs:javax.ws.rs-api:2.1.1'
+    implementation 'io.undertow:undertow-core:2.0.29.Final'
+    implementation 'io.undertow:undertow-servlet:2.0.29.Final'
+    implementation 'org.jboss.resteasy:resteasy-jaxrs-all:4.4.2.Final'
+    implementation 'org.jboss.resteasy:resteasy-jackson2-provider:4.4.2.Final'
+    implementation 'org.jboss.resteasy:resteasy-undertow:4.4.2.Final'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+}
+
+application {
+    mainClassName = 'rest.app.App'
+}
+
+test {
+    useJUnitPlatform()
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
