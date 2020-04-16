@@ -25,7 +25,7 @@ dependencies {
 }
 
 application {
-    mainClassName = 'rest.app.App'
+    mainClassName = 'rest.app.Main'
 }
 
 test {
